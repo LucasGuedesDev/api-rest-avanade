@@ -4,44 +4,24 @@ Projeto API Rest - Avanade
 
 ´´´mermaid
 
-{
-  "name": "Lucas Guedes",
-  "car": {
-    "make": "Tesla",
-    "model": "Model S",
-    "year": 2022,
-    "price_usd": 79999.00
-  },
-  "features": [
-    {
-      "icon": "URL",
-      "description": "Autonomia de 370 milhas"
-    },
-    {
-      "icon": "URL",
-      "description": "Carregamento rápido"
+classDiagram
+    class Owner {
+        +String name
     }
-  ],
-  "transactions": [
-    {
-      "tx_id": "abc123xyz",
-      "type": "purchase",
-      "amount_usd": 79999.00,
-      "status": "completed"
-    },
-    {
-      "tx_id": "def456uvw",
-      "type": "service",
-      "amount_usd": 300.00,
-      "status": "pending"
-    }
-  ],
-  "news": [
-    {
-      "icon": "URL",
-      "description": "Tesla lança atualização para carros Model S!"
-    }
-  ]
-}
 
-![image](https://github.com/user-attachments/assets/df86baf9-7da7-4c33-977d-b7e05cb96a95)
+    class Car {
+        +String brand
+        +String model
+        +int year
+    }
+
+    class News {
+        +String icon
+        +String description
+    }
+
+    Owner "1" -- "1" Car : possui
+    Owner "1" -- "many" News : recebe atualizações
+
+![car_registry_diagram](https://github.com/user-attachments/assets/dcd66035-e63a-4656-8fcd-a64b482eadca)
+
