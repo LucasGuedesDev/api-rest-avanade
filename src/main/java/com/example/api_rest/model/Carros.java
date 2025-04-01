@@ -3,8 +3,8 @@ package com.example.api_rest.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "apis")
-public class Api {
+@Table(name = "carros")
+public class Carros {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
